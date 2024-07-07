@@ -1,4 +1,4 @@
-<li>
+<li class="li-0<%= wish.id % 5 %>">
   <p>投稿者：<%= wish.user_name %></p>
   <p><%= wish.content %></p>
   <p><%= wish.fulfilled ? '叶いました' : '願いごと保留中' %></p>
