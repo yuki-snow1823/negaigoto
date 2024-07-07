@@ -1,0 +1,15 @@
+<h1>願いごと編集</h1>
+
+<%= form_with(model: @wish, data: { turbo: false }) do |f| %>
+  <div>
+      <%= f.label :投稿者 %><br>
+      <%= f.text_field :user_name, autofocus: true %>
+  </div>
+  <div>
+      <%= f.label :内容 %><br>
+      <%= f.text_field :content %>
+  </div>
+  <div>
+    <%= f.submit "更新する" %>
+  </div>
+<% end %>

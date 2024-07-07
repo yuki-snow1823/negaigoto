@@ -25,9 +25,22 @@ class WishesController < ApplicationController
   def show
   end
 
+  def edit
+    @wish = Wish.find(params[:id])
+  end
+
+  def update
+    @wish = Wish.find(params[:id])
+    if @wish.update(wish_params)
+      flash[:notice] = "願いごとを更新しました"
+      redirect_to wish_path(@wish)
+    else
+      render :edit
+    end
+
   def destroy
     if @wish.destroy
-      redirect_to wishes_path
+      redirect_to wishes_path, flash: { success: '削除しました' }, status: :see_other
     else
       flash[:danger] = '削除に失敗しました'
       render :show
