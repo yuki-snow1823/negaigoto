@@ -1,6 +1,6 @@
 <h1>New Wish</h1>
 
-<%= form_with(model: @wish, local: true) do |form| %>
+<%= form_with(model: @wish, data: { turbo: false }) do |form| %>
   <div class="form-group">
     <%= form.label '名前' %>
     <%= form.text_field :user_name, class: "form-control" %>

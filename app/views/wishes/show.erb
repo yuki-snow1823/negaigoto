@@ -1,14 +1,17 @@
 <h1>Wish Detail</h1>
 
-<ul>
-  <li><strong><%= @wish.user_name %>:</strong></li>
-  <li><%= @wish.content %>
-  <li>作成日: <%= @wish.created_at %>
-  <li>いいね数: <%= @wish.likes_count %>
-  <li>叶った？: <%= @wish.fulfilled ? 'Yes' : 'No' %>
-  <li>リマインダー日: <%= @wish.remind_at %>
-  <%= link_to 'Edit', edit_wish_path(@wish) %>
-  <%= link_to 'Back to top', wishes_path %> |
-  <%= link_to 'Delete', @wish, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p>
+  <strong><%= @wish.user_name %></strong><br>
+  <%= @wish.content %>
+</p>
 
+<ul>
+  <li>作成日: <%= @wish.created_at %></li>
+  <li>いいね数: <%= @wish.likes_count %></li>
+  <li>叶った？: <%= @wish.fulfilled ? 'Yes' : 'No' %></li>
+  <li>リマインダー日: <%= @wish.remind_at %></li>
 </ul>
+
+<%= link_to 'Edit', edit_wish_path(@wish) %>
+<%= link_to 'Back to top', wishes_path %> |
+<%= link_to 'Delete', @wish, method: :delete, data: { confirm: 'Are you sure?' }, data: { turbo: false } %>

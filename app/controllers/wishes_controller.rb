@@ -10,11 +10,12 @@ class WishesController < ApplicationController
   end
 
   def create
-    if @wish.save
-      flush[:wish_success_message] = '願いごとが作られました'
-      redirect_to controller: :wish, action: :show, id: @wish.id
+    @wish = Wish.new(wish_params)
+    if @wish.save!
+      flash[:wish_success_message] = '願いごとが作られました'
+      redirect_to wish_path(@wish)
     else
-      flush[:wish_success_faild] = '願いごとが作られませんでした'
+      flash[:wish_success_faild] = '願いごとが作られませんでした'
       redirect_to :back
     end
   end
@@ -28,13 +29,21 @@ class WishesController < ApplicationController
     if @wish.destroy
       redirect_to wishes_path
     else
-      render :show, danger: '削除に失敗しました'
+      flash[:danger] = '削除に失敗しました'
+      render :show
     end
+  end
+
+  def count_up_likes
+    @wish = Wish.find(params[:id])
+    @wish.likes_count += 1
+    @wish.save
+    redirect_to wish_path(@wish)
   end
 
   private
 
   def wish_params
-    params.requrie(:wish).permit(:user_name, :content)
+    params.require(:wish).permit(:user_name, :content)
   end
 end
