@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateWishes < ActiveRecord::Migration[6.0]
   def change
     create_table :wishes do |t|
@@ -8,7 +10,7 @@ class CreateWishes < ActiveRecord::Migration[6.0]
       t.datetime :remind_at
 
       t.timestamps
-      puts 'hello w'
+      Rails.logger.debug 'hello w'
     end
   end
 end

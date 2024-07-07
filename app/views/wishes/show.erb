@@ -1,0 +1,11 @@
+<h1>Wish Detail</h1>
+
+<ul>
+  <strong><%= @wish.user_name %>:</strong>
+  <%= @wish.content %>
+  いいね数: <%= @wish.likes_count %>
+  叶った？: <%= @wish.fulfilled ? 'Yes' : 'No' %>
+  <%= link_to 'Edit', edit_wish_path(@wish) %>
+  <%= link_to 'Back to top', whies_path %> |
+  <%= link_to 'Delete', wish_path(@wish), method: :delete, data: { confirm: 'Are you sure?' } %>
+</ul>
