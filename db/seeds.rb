@@ -2,32 +2,42 @@
 
 wishes = [
   {
-    content: '世界が平和になりますように',
-    user_name: 'ユーザー1',
-    likes_count: 10,
+    content: "就職して障害を起こしませんように",
+    user_name: "すずか",
+    likes_count: 703,
     fulfilled: false,
-    remind_at: DateTime.now + 1.day
   },
   {
-    content: 'みんなが健康になりますように',
-    user_name: 'ユーザー2',
-    likes_count: 5,
-    fulfilled: false,
-    remind_at: DateTime.now + 2.days
-  },
-  {
-    content: 'ペットが飼えますように',
-    user_name: 'ユーザー3',
-    likes_count: 20,
-    fulfilled: true,
-    remind_at: DateTime.now + 3.days
-  },
-  {
-    content: 'クリスマスプレゼントがもらえますように',
-    user_name: 'ユーザー4',
+    content: "安全にリリースできますように",
+    user_name: "ほりゆう",
     likes_count: 3,
-    fulfilled: true
-  }
+    fulfilled: false,
+  },
+  {
+    content: "クリスマスプレゼントがもらえますように",
+    user_name: "しげる。",
+    likes_count: 4,
+    fulfilled: false,
+  },
+  {
+    content: "自分の差し入れを食べてもらえますように",
+    user_name: "kochi",
+    likes_count: 255,
+    fulfilled: false,
+  },
+  {
+    content: "プレステ5欲しい",
+    user_name: "クレヘイ",
+    likes_count: 100,
+    fulfilled: false,
+  },
+  {
+    content: "猫が飼いたい",
+    user_name: "すずか",
+    likes_count: 703,
+    fulfilled: false,
+  },
+
 ]
 
 wishes.each do |wish|

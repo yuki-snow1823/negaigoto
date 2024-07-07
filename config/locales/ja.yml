@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      wish:
+        user_name: 名前
+        content: 願いごと
