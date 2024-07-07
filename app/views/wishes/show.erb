@@ -5,7 +5,7 @@
   <%= @wish.content %>
   いいね数: <%= @wish.likes_count %>
   叶った？: <%= @wish.fulfilled ? 'Yes' : 'No' %>
-  進捗確認日: 
+  進捗確認日: <%= @wish.likes_count %>
   <%= link_to 'Edit', edit_wish_path(@wish) %>
   <%= link_to 'Back to top', whies_path %> |
   <%= link_to 'Delete', @wish, method: :delete, data: { confirm: 'Are you sure?' } %>
