@@ -37,6 +37,7 @@ class WishesController < ApplicationController
     else
       render :edit
     end
+  end
 
   def destroy
     if @wish.destroy
