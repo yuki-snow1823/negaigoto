@@ -23,8 +23,8 @@ wishes = [
     remind_at: DateTime.now + 3.days
   },
   {
-    content: "クリスマスプレゼントがもらえますように",
-    user_name: "ユーザー4",
+    content: 'クリスマスプレゼントがもらえますように',
+    user_name: 'ユーザー4',
     likes_count: 3,
     fulfilled: true
   }
