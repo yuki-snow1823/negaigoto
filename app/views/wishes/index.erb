@@ -3,11 +3,11 @@
 <% if @wishes.any? %>
 <ul>
   <% @wishes.each do |wish| %>
-  <%= render "wish",  %>
+  <%= render "wish",  wish:%>
   <% end %>
 </ul>
 <% else %>
-<p>No wishes found.</p>
+<p>願いごとはありません</p>
 <% end %>
 
 <%= link_to 'New Wish', new_wish_path %>
