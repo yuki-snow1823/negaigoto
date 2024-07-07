@@ -40,7 +40,7 @@ class WishesController < ApplicationController
   def destroy
     @wish = Wish.find(params[:id])
     if @wish.destroy
-      redirect_to wishes_path
+      redirect_to wishes_path, flash: { success: '削除しました' }, status: :see_other
     else
       flash[:danger] = '削除に失敗しました'
       render :show
