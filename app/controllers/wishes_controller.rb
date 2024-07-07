@@ -11,7 +11,8 @@ class WishesController < ApplicationController
 
   def create
     if @wish.save!
-      redirect_to controller: :wish, action: :show
+      flush
+      redirect_to controller: :wish, action: :show, id: @wish.id
     else
       redirect_to :back
     end
