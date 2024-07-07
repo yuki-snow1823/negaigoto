@@ -24,6 +24,19 @@ class WishesController < ApplicationController
     @wish = Wish.find(params[:id])
   end
 
+  def edit
+    @wish = Wish.find(params[:id])
+  end
+
+  def update
+    @wish = Wish.find(params[:id])
+    if @wish.update(wish_params)
+      flash[:notice] = "願いごとを更新しました"
+      redirect_to wish_path(@wish)
+    else
+      render :edit
+    end
+
   def destroy
     @wish = Wish.find(params[:id])
     if @wish.destroy
