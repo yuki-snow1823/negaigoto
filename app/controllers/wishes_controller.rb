@@ -10,11 +10,11 @@ class WishesController < ApplicationController
   end
 
   def create
-    if @wish.save!
-      flush[:wish_success_message] = "願いごとが作られました"
+    if @wish.save
+      flush[:wish_success_message] = '願いごとが作られました'
       redirect_to controller: :wish, action: :show, id: @wish.id
     else
-      flush[:wish_success_faild] = "願いごとが作られませんでした"
+      flush[:wish_success_faild] = '願いごとが作られませんでした'
       redirect_to :back
     end
   end
@@ -23,12 +23,12 @@ class WishesController < ApplicationController
     @wish = Wish.find(params[:id])
   end
 
-  def delete
+  def destroy
     @wish = Wish.find(params[:id])
     if @wish.destroy
       redirect_to wishes_path
     else
-      render :show, danger: "削除に失敗しました"
+      render :show, danger: '削除に失敗しました'
     end
   end
 
