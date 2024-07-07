@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class WishesController < ApplicationController
-  before_action :set_wish, only: [:show, :edit, :update, :destroy]
   def index
     @wishes = Wish.all
   end
@@ -24,6 +23,7 @@ class WishesController < ApplicationController
   end
 
   def delete
+    @wish = Wish.find(params[:id])
     if @wish.destroy
       redirect_to wishes_path
     else
@@ -32,10 +32,6 @@ class WishesController < ApplicationController
   end
 
   private
-
-  def set_wish
-    @wish = Wish.find(params[:id])
-  end
 
   def wish_params
     params.requrie(:wish).permit(:user_name, :content)
