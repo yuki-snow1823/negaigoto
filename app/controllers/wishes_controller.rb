@@ -23,7 +23,7 @@ class WishesController < ApplicationController
     @wish = Wish.find(params[:id])
   end
 
-  def delete
+  def destroy
     if @wish.destroy
       redirect_to wishes_path
     else
