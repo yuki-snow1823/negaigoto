@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class WishesController < ApplicationController
-  before_action :set_wish, only: [:show, :edit, :update, :destroy]
   def index
     @wishes = Wish.all
   end
@@ -12,9 +11,10 @@ class WishesController < ApplicationController
 
   def create
     if @wish.save!
-      flush
+      flush[:wish_success_message] = "願いごとが作られました"
       redirect_to controller: :wish, action: :show, id: @wish.id
     else
+      flush[:wish_success_faild] = "願いごとが作られませんでした"
       redirect_to :back
     end
   end
