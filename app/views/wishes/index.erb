@@ -3,7 +3,7 @@
 <% if @wishes.any? %>
 <ul>
   <% @wishes.each do |wish| %>
-    <%= render "wish",  wish: %>
+    <%= render "wish", wish: wish  %>
   <% end %>
 </ul>
 <% else %>
