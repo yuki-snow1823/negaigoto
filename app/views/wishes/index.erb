@@ -1,0 +1,13 @@
+<h1>Wishes List</h1>
+
+<% if @wishes.any? %>
+<ul>
+  <% @wishes.each do |wish| %>
+    <%= render "wish", wish: %>
+  <% end %>
+</ul>
+<% else %>
+<p>No wishes found.</p>
+<% end %>
+
+<%= link_to 'New Wish', new_wish_path %>
