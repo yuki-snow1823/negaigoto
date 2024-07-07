@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WishesController < ApplicationController
+  before_action :set_wish, only: [:show, :edit, :update, :destroy]
   def index
     @wishes = Wish.all
   end
@@ -22,7 +23,19 @@ class WishesController < ApplicationController
     @wish = Wish.find(params[:id])
   end
 
+  def delete
+    if @wish.destroy
+      redirect_to wishes_path
+    else
+      render :show, danger: "削除に失敗しました"
+    end
+  end
+
   private
+
+  def set_wish
+    @wish = Wish.find(params[:id])
+  end
 
   def wish_params
     params.requrie(:wish).permit(:user_name, :content)
