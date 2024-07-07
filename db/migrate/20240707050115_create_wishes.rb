@@ -8,7 +8,7 @@ class CreateWishes < ActiveRecord::Migration[6.0]
       t.datetime :remind_at
 
       t.timestamps
-
+      puts 'hello w'
     end
   end
 end
