@@ -1,17 +1,25 @@
-<h1>New Wish</h1>
+<h1 style="text-align: center;">短冊作成</h1>
 
-<%= form_with(model: @wish, data: { turbo: false }) do |form| %>
-  <div class="form-group">
-    <%= form.label '名前' %>
-    <%= form.text_field :user_name, class: "form-control" %>
-  </div>
+<div class="wish-form">
+    <ul>
+    <% @wish.errors.full_messages.each do |message|%>
+        <li class="wish-validation-message"><%=message%></li>
+    <% end %>
+    </ul>
+    <%= form_with(model: @wish, data: { turbo: false }) do |form| %>
+    <div class="form-group">
+        <%= form.label '名前' %>
+        <%= form.text_field :user_name, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.label '願いごと' %>
-    <%= form.text_area :content, class: "form-control" %>
-  </div>
+    <div class="form-group">
+        <%= form.label '願いごと' %>
+        <%= form.text_area :content, class: "form-control" %>
+    </div>
 
-  <div class="form-group">
-    <%= form.submit "お願いする", class: "btn-submit" %>
-  </div>
-<% end %>
+    <div class="form-group btn-submit">
+        <%= form.submit "お願いする", class: "btn-submit" %>
+    </div>
+    <% end %>
+</div>
+
