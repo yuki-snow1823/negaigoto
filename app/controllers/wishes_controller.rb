@@ -22,8 +22,7 @@ class WishesController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     @wish = Wish.find(params[:id])
@@ -32,7 +31,7 @@ class WishesController < ApplicationController
   def update
     @wish = Wish.find(params[:id])
     if @wish.update(wish_params)
-      flash[:notice] = "願いごとを更新しました"
+      flash[:notice] = '願いごとを更新しました'
       redirect_to wish_path(@wish)
     else
       render :edit

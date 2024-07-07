@@ -15,8 +15,8 @@
  */
 body {
   color: white;
-  background-image: url('/assets/background.png');
-  background-attachment: fixed; 
+  background-image: url("/assets/background.png");
+  background-attachment: fixed;
   background-size: cover;
 }
 
@@ -29,8 +29,6 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #f9f9f9;
 }
-
-
 
 .form-group {
   margin-bottom: 15px;
@@ -53,7 +51,6 @@ form {
 }
 
 .btn-submit {
-  text-align: center;
   display: inline-block;
   padding: 10px 20px;
   border: none;
@@ -61,7 +58,6 @@ form {
   background-color: #007bff;
   color: white;
   font-size: 16px;
-  cursor: pointer;
 }
 
 .btn-submit:hover {
