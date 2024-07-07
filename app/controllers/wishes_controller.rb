@@ -23,7 +23,8 @@ class WishesController < ApplicationController
     @wish = Wish.find(params[:id])
   end
 
-  def destroy
+  def delete
+    @wish = Wish.find(params[:id])
     if @wish.destroy
       redirect_to wishes_path
     else
@@ -32,10 +33,6 @@ class WishesController < ApplicationController
   end
 
   private
-
-  def set_wish
-    @wish = Wish.find(params[:id])
-  end
 
   def wish_params
     params.requrie(:wish).permit(:user_name, :content)
